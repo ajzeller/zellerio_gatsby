@@ -136,7 +136,12 @@ const ProjectCard = ({projectData}) => {
     tools
    } = projectData
 
-   const [width, height] = useWindowSize()
+   let [width, height] = useWindowSize()
+
+   if(!width){
+    width = 1000
+   }
+
    console.log(`width: ${width}`)
 
   return(
