@@ -64,13 +64,14 @@ const MotionContainer = styled.div`
 `
 
 const Masthead = ( {data} ) => {
-  console.log(data)
+  // console.log(data)
+
   return(
     <ContainerBodyWidth>
       <MastheadContainer>
         <Image fluid={data.myInfo.mainImage.asset.fluid} />
         <MastheadText>
-          <p>Hey there, I'm Andrew. 👋</p>
+          <p>Hey there, I'm Andrew.</p>
 
           <p>I am a <span className="bold">frontend developer</span> living in Mountain View, California.</p>
 

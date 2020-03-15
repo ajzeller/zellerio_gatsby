@@ -46,7 +46,7 @@ const IndexPage = props => {
         <Masthead data={data} />
         <ProjectsPanel data={data} />
 
-      <Container>
+      {/* <Container>
         <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (
           <ProjectPreviewGrid
@@ -62,7 +62,7 @@ const IndexPage = props => {
             browseMoreHref='/blog/'
           />
         )}
-      </Container>
+      </Container> */}
     </Layout>
   )
 }
@@ -80,9 +80,32 @@ export const query = graphql`
     projects: allSanityProject {
       edges {
         node {
-          id
+          _rawBody
+          githubUrl
+          color
+          name
+          projectUrl
+          summary
           slug {
+            _key
+            _type
             current
+          }
+          year
+          tools {
+            name
+            color
+            backgroundColor
+          }
+          imageMobile1 {
+            asset {
+              fluid {
+                ...GatsbySanityImageFluid
+              }
+              fixed(width: 400) {
+                ...GatsbySanityImageFixed
+              }
+            }
           }
         }
       }

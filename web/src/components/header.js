@@ -1,8 +1,10 @@
 import { Link } from 'gatsby'
 import React, { useState } from 'react'
+import { motion } from "framer-motion";
+import styled from 'styled-components'
+
 import Icon from './icons'
 import { cn } from '../lib/helpers'
-import styled from 'styled-components'
 import styles from './header.module.css'
 import Logo from '../assets/logo.svg'
 import Toggler from './toggler'
@@ -10,7 +12,6 @@ import { ContainerFullWidth, ContainerBodyWidth } from '../containers'
 
 import { FaGithub, FaDribbble, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
-
 
 const HeaderContainer = styled(ContainerBodyWidth)`
   display: grid;
@@ -103,16 +104,59 @@ const Hamburger = styled.div`
   }
 `
 
-const Dropdown = styled.div`
-  display: grid;
+// const Dropdown = styled.div`
+//   display: grid;
+//   z-index: 100;
+//   position: fixed;
+//   top: 0px;
+//   left: 0px;
+//   height: 100vh;
+//   width: 100%;
+//   /* background-color: ${props => props.theme.theme.bg.primary}; */
+//   background-color: white;
+//   /* align-items: center; */
+//   align-content: space-between;	
+//   justify-content: center;
+//   margin: 0;
+//   box-sizing: border-box;
+//   padding: 0 0 16px 0;
+
+//   ul{
+//     list-style-type: none;
+//     margin: 0;
+//     padding: 0;
+
+//     li {
+//       text-align: center;
+//       margin: 25px 0;
+
+//       a{
+//         color: ${props => props.theme.theme.text.tertiary};
+//         text-decoration: none;
+//         font-size: 1rem;
+//       }
+
+//       &.current{
+//           a {
+//             border-bottom: 0;
+//           }
+//     }
+//   }
+// }
+// `
+
+const Dropdown = styled(motion.div)`
+  /* display: grid; */
+  display: none;
+  opacity: 0;
   z-index: 100;
   position: fixed;
   top: 0px;
   left: 0px;
   height: 100vh;
   width: 100%;
-  /* background-color: ${props => props.theme.theme.bg.primary}; */
-  background-color: white;
+  background-color: ${props => props.theme.theme.bg.secondary};
+  /* background-color: white; */
   /* align-items: center; */
   align-content: space-between;	
   justify-content: center;
@@ -176,22 +220,40 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
 
   const socialList = (
     <SocialIcons>
-      <Link to='#'>
+      <a href="https://github.com/ajzeller" target="_blank">
         <FaGithub size='24px' className='icon' />
-      </Link>
-      <Link to='#'>
+      </a>
+      <a href="https://dribbble.com/andrewjzeller" target="_blank">
         <FaDribbble size='24px' className='icon' />
-      </Link>
-      <Link to='#'>
+      </a>
+      <a href="https://www.linkedin.com/in/andrewjzeller/" target="_blank">
         <FaLinkedin size='24px' className='icon' />
-      </Link>
-      <Link to='#'>
+      </a>
+      <a href="https://twitter.com/andrewjzeller" target="_blank">
         <FaTwitter size='24px' className='icon' />
-      </Link>
+      </a>
     </SocialIcons>)
 
+  // const dropdown = (
+  //   <Dropdown>
+  //     <CloseBtn>
+  //       <Hamburger>
+  //         <IoMdClose size='24px' onClick={() => setIsMenuVisible(prev => !prev)} />
+  //       </Hamburger>
+  //     </CloseBtn>
+  //     {navList}
+  //     {socialList}
+  //   </Dropdown>
+  // )
+
   const dropdown = (
-    <Dropdown>
+    <Dropdown
+      animate={
+        isMenuVisible
+          ? { x: 0, y: 0, display: 'grid', opacity: 100, scale: 1 }
+          : { x: 0, y: '-100vh', display: 'grid', opacity: 0, scale: 0 }
+      }
+    >
       <CloseBtn>
         <Hamburger>
           <IoMdClose size='24px' onClick={() => setIsMenuVisible(prev => !prev)} />
@@ -222,7 +284,8 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
 
     </HeaderContainer>
 
-    {isMenuVisible && dropdown}
+    {/* {isMenuVisible && dropdown} */}
+    {dropdown}
   </ContainerFullWidth>
   )
 }

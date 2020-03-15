@@ -9,8 +9,13 @@ export default {
       type: 'string'
     },
     {
-      title: 'Color',
+      title: 'Text Color',
       name: 'color',
+      type: 'string'
+    },
+    {
+      title: 'Background Color',
+      name: 'backgroundColor',
       type: 'string'
     },
     {

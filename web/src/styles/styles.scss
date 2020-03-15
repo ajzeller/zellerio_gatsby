@@ -13,4 +13,9 @@ body {
   margin: 0px;
   padding: 0px;
   // background-color: RGBA(244, 245, 250, 1.00);
+  overflow-x: hidden; 
+
+  a{
+    text-decoration: none;
+  }
 }
