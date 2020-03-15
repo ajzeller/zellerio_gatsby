@@ -4,7 +4,8 @@ import { ThemeProvider } from 'styled-components'
 import useDarkMode from 'use-dark-mode'
 
 export default ({ children }) => {
-  let darkMode = useDarkMode(true)
+  let darkMode = useDarkMode(false)
+  console.log(darkMode.value)
   const theme = darkMode.value ? darkTheme : lightTheme
   darkMode = {...darkMode, theme} 
 
