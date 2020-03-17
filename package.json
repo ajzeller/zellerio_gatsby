@@ -1,8 +1,8 @@
 {
   "private": false,
-  "name": "example-company-website-gatsby-sanity-combo",
+  "name": "zellerio_gatsby",
   "version": "1.0.0",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "@ajzeller",
   "engines": {
     "node": "10.x"
   },
@@ -12,6 +12,7 @@
     "empty-cache": "lerna run empty-cache",
     "init": "cd studio && sanity init && lerna run graphql-deploy",
     "format": "lerna run format",
+    "build-studio": "lerna bootstrap && cd studio && npm run build",
     "graphql-deploy": "lerna run graphql-deploy",
     "lint": "lerna run lint",
     "now-deploy": "now && now alias",

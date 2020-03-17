@@ -1,8 +1,8 @@
 {
   "private": false,
-  "name": "example-company-website-gatsby-sanity-combo-frontend",
+  "name": "zellerio_gatsby",
   "version": "1.0.0",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "@ajzeller",
   "engines": {
     "node": "10.x"
   },
