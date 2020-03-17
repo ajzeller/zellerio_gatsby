@@ -6,14 +6,13 @@ import '../styles/ToggleStyle.scss'
 import { FiMoon, FiSun } from "react-icons/fi"
 
 const Toggler = () => {
-  const darkMode = useDarkMode(false)
-  const theme = darkMode.value ? 'dark' : 'light'
-
+  const darkMode = useDarkMode()
+  console.log(darkMode.value)
   // console.log(theme)
 
   return(
     <Toggle
-          defaultChecked={darkMode.value}
+          checked={darkMode.value}
           onChange={darkMode.toggle} 
           icons={{
             checked: <FiSun />,

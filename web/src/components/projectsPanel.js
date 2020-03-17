@@ -23,7 +23,6 @@ const BodyContainer = styled(ContainerBodyWidth)`
 
   @media (max-width: 400px) {
     padding: 48px 12px;
-
   }
 `
 
@@ -47,7 +46,7 @@ const ProjectsPanel = ({data}) => {
     >
       <BodyContainer>
         <ProjectGrid>
-          {data.projects.edges.map(project => (<ProjectCard projectData={project.node} key={project.node.slug.current} />) )}
+          {data.site.projects.map(project => (<ProjectCard projectData={project} key={project.slug.current} />) )}
         </ProjectGrid>
       </BodyContainer>
     </ProjectsPanelContainer>

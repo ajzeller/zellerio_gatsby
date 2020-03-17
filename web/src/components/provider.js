@@ -7,12 +7,12 @@ export default ({ children }) => {
   let darkMode = useDarkMode(false)
   const theme = darkMode.value ? darkTheme : lightTheme
   darkMode = {...darkMode, theme} 
+  console.log(darkMode.value)
+  // const [mounted, setMounted] = React.useState(false)
 
-  const [mounted, setMounted] = React.useState(false)
-
-  React.useEffect(() => {
-    setMounted(true)
-  }, [])
+  // React.useEffect(() => {
+  //   setMounted(true)
+  // }, [])
     
   const body = 
     <ThemeProvider theme={darkMode} toggleTheme={darkMode.toggle}>
@@ -20,9 +20,9 @@ export default ({ children }) => {
     </ThemeProvider>
 
   // prevents ssr flash for mismatched dark mode
-  if (!mounted) {
-      return <div style={{ visibility: 'hidden' }}>{body}</div>
-  }
+  // if (!mounted) {
+  //     return <div style={{ visibility: 'hidden' }}>{body}</div>
+  // }
 
   return body
 }

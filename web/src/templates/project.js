@@ -9,11 +9,63 @@ import Layout from '../containers/layout'
 export const query = graphql`
   query ProjectTemplateQuery($id: String!) {
     project: sanityProject(id: { eq: $id }) {
-      id
+      _rawBody
+      githubUrl
+      color
+      name
+      projectUrl
+      summary
       slug {
+        _key
+        _type
         current
       }
-      _rawBody
+      year
+      tools {
+        name
+        color
+        backgroundColor
+      }
+      imageMobile1 {
+        asset {
+          fluid {
+            ...GatsbySanityImageFluid
+          }
+          fixed(width: 400) {
+            ...GatsbySanityImageFixed
+          }
+        }
+      }
+      imageMobile2 {
+        asset {
+          fluid {
+            ...GatsbySanityImageFluid
+          }
+          fixed(width: 400) {
+            ...GatsbySanityImageFixed
+          }
+        }
+      }
+      imageMobile3 {
+        asset {
+          fluid {
+            ...GatsbySanityImageFluid
+          }
+          fixed(width: 400) {
+            ...GatsbySanityImageFixed
+          }
+        }
+      }
+      imageDesktop {
+        asset {
+          fluid {
+            ...GatsbySanityImageFluid
+          }
+          fixed(width: 400) {
+            ...GatsbySanityImageFixed
+          }
+        }
+      }
     }
   }
 `
@@ -24,7 +76,7 @@ const ProjectTemplate = props => {
   return (
     <Layout>
       {errors && <SEO title='GraphQL Error' />}
-      {project && <SEO title={project.title || 'Untitled'} />}
+      {project && <SEO title={project.name || 'Untitled'} />}
 
       {errors && (
         <Container>

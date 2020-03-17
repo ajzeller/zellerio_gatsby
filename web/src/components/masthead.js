@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import { FaReact, FaDatabase } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { ContainerFullWidth, ContainerBodyWidth } from '../containers'
+import { H1, H2, H3, H4, H5, Paragraph } from './'
 
 const MastheadContainer = styled.div`
   display: grid;
@@ -39,11 +40,10 @@ const Image = styled(Img)`
   justify-self: center;
 `
 
-const Label = styled.h3`
-  font-size: 0.7rem;
-  text-transform: uppercase;
+export const Label = styled(H4)`
   font-weight: 700;
-  margin: 10px 0 20px 0;
+  text-transform: uppercase;
+  margin: 10px 0 12px 0;
 `
 
 const SkillsGrid = styled.div`

@@ -31,6 +31,21 @@ export default {
       name: 'author',
       title: 'Author',
       type: 'string'
+    },
+    {
+      name: 'projects',
+      title: 'Projects',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [
+            {
+              type: 'project'
+            }
+          ]
+        }
+      ]
     }
   ]
 }

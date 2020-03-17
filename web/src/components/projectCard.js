@@ -58,7 +58,7 @@ const ImageWrapper = styled(motion.div)`
 
 const ProjectInfo = styled.div`
   display: grid;
-  grid-gap: 12px;
+  grid-gap: 24px;
   align-items: start;
   align-content: start;
   padding: 24px 24px 24px 0;
@@ -78,7 +78,7 @@ const ProjectInfo = styled.div`
   
 `
 
-const Button = styled(motion.button)`
+export const Button = styled(motion.button)`
   display: flex;
   border: 0;
   font-size: 1rem;
@@ -86,7 +86,6 @@ const Button = styled(motion.button)`
   padding: 5px 10px;
   align-items: center;
   border-radius: 5px;
-  color: white;
   height: 40px;
 
   &:hover {
@@ -104,13 +103,16 @@ const ButtonPrimary = styled(Button)`
   color: ${props => props.color};
   background-color: white;
   margin: 0 12px 0 0;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
 `
 
 const ButtonSecondary = styled(Button)`
+  color: white;
   background-color: ${props => props.color};
   /* background-color: none; */
   border: 1px solid white;
   margin: 0 12px 0 0;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
 `
 
 const ToolGrid = styled.div`
@@ -118,7 +120,7 @@ const ToolGrid = styled.div`
   flex-wrap: wrap;
 `
 
-const ButtonGroup = styled.div`
+export const ButtonGroup = styled.div`
   display: flex;
   justify-content: flex-start;
 `

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const ContainerFullWidth = styled.div`
-  width: 100vw;
+  width: 100%;
   background-color: ${props => props.theme.theme.bg.primary};
 
 `

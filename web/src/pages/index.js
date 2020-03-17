@@ -42,7 +42,7 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <SEO title={site.title} description={site.description} keywords={site.keywords} />
+      <SEO title={data.site.title} description={data.site.description} keywords={data.site.keywords} />
         <Masthead data={data} />
         <ProjectsPanel data={data} />
 
@@ -75,6 +75,35 @@ export const query = graphql`
       title
       description
       keywords
+      projects {
+        _rawBody
+        githubUrl
+        color
+        name
+        projectUrl
+        summary
+        slug {
+          _key
+          _type
+          current
+        }
+        year
+        tools {
+          name
+          color
+          backgroundColor
+        }
+        imageMobile1 {
+          asset {
+            fluid {
+              ...GatsbySanityImageFluid
+            }
+            fixed(width: 400) {
+              ...GatsbySanityImageFixed
+            }
+          }
+        }
+      }
     }
 
     projects: allSanityProject {
