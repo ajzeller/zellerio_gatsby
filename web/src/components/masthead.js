@@ -7,6 +7,7 @@ import { ContainerFullWidth, ContainerBodyWidth } from '../containers'
 import { H1, H2, H3, H4, H5, Paragraph } from './'
 
 const MastheadContainer = styled.div`
+  background-color: ${props => props.theme.theme.bg.primary};
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 30px;
@@ -82,7 +83,7 @@ const Masthead = ( {data} ) => {
             <FaReact size='24px' />
               <div>
                 <p><span className="bold">Frontend</span></p>
-                <p>React, Redux, Next, Gatsby, D3, SASS, Styled-Components</p>
+                <p>React, Redux, Next.js, Gatsby.js, D3, SASS, Styled-Components</p>
               </div>
             <FaDatabase size='24px' />
               <div>

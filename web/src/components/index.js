@@ -23,5 +23,9 @@ export const Paragraph = styled.p`
   a{
     color: ${props => props.theme.theme.text.primary};
     border-bottom: 4px solid ${props => props.theme.theme.border.secondary};
+
+    &:hover {
+      
+    }
   }
 `

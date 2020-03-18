@@ -8,6 +8,10 @@ import { ContainerFullWidth, ContainerBodyWidth } from '../containers'
 import { FaGithub, FaDribbble, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 
+const HeaderContainerFullWidth = styled(ContainerFullWidth)`
+  background-color: ${props => props.theme.theme.bg.primary};
+`
+
 const HeaderContainer = styled(ContainerBodyWidth)`
   display: grid;
   grid-template-columns: auto 1fr;
@@ -208,7 +212,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
   )
 
   return(
-  <ContainerFullWidth>
+  <HeaderContainerFullWidth>
     <HeaderContainer>
       <Link to='/' className="logo">
           {/* <Logo className='logo' /> */}
@@ -229,7 +233,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
 
     {/* {isMenuVisible && dropdown} */}
     {dropdown}
-  </ContainerFullWidth>
+  </HeaderContainerFullWidth>
   )
 }
 

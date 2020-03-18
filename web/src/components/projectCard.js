@@ -54,6 +54,7 @@ const ImageWrapper = styled(motion.div)`
     top: 0px;
     width: 80vw;
     justify-self: center;
+    border-radius: 24px;
   }
 `
 

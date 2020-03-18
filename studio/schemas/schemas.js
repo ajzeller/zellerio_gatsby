@@ -21,6 +21,7 @@ import projectMember from './projectMember'
 import siteSettings from './siteSettings'
 import slideshow from './slideshow'
 import tools from './tools'
+import inspirationItem from './inspirationItem'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -46,7 +47,8 @@ export default createSchema({
     projectMember,
     siteSettings,
     slideshow,
-    tools
+    tools,
+    inspirationItem
 
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas

@@ -3,8 +3,6 @@ import styled from 'styled-components'
 
 export const ContainerFullWidth = styled.div`
   width: 100%;
-  background-color: ${props => props.theme.theme.bg.primary};
-
 `
 
 export const ContainerBodyWidth = styled.div`

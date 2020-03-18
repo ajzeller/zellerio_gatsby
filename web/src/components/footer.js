@@ -23,7 +23,7 @@ const FooterGrid = styled(ContainerBodyWidth)`
   /* color: white; */
 
   a {
-    color: ${props => props.theme.theme.text.secondary};
+    color: ${props => props.theme.theme.text.tertiary};
     /* color: white; */
     text-decoration: none;
     font-size: 1rem;

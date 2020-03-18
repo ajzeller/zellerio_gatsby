@@ -14,7 +14,8 @@ const ProjectsPanelContainer = styled(motion.div)`
 
   width: 100%;
   background-color: ${props => props.theme.theme.bg.secondary};
-  box-shadow: 0px -10px 10px 0px rgba(0,0,0,0.1);
+  /* box-shadow: 0px -10px 0px 0px rgba(0,0,0,0.05); */
+  border-top: 1px solid ${ props => props.theme.theme.border.secondary};
   position: relative;
   top: 500px;
   min-height: 500px;
@@ -51,7 +52,7 @@ const ProjectsPanel = ({data}) => {
       animate={{y: -500}}
     >
       <BodyContainer>
-        <Title>Projects</Title>
+        <Title>My Projects</Title>
         <ProjectGrid>
           {data.site.projects.map(project => (<ProjectCard projectData={project} key={project.slug.current} />) )}
         </ProjectGrid>
