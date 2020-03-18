@@ -14,6 +14,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'logoText',
+      title: 'Logo text',
+      type: 'string'
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'text'

@@ -76,7 +76,6 @@ export const query = graphql`
       description
       keywords
       projects {
-        _rawBody
         githubUrl
         color
         name

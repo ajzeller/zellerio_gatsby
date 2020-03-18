@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { IoMdArrowForward } from "react-icons/io";
 import { FaGithub } from "react-icons/fa";
 import ToolItem from './toolItem'
+import { H1, H2, H3, H4, H5, Paragraph } from '../components'
 import {
   useWindowSize,
   useWindowWidth,
@@ -165,7 +166,7 @@ const ProjectCard = ({projectData}) => {
         </a>
 
         <ProjectInfo>
-          <h2>{name}</h2>
+          <H2>{name}</H2>
           <p>{summary}</p>
 
           <ToolGrid>

@@ -46,7 +46,7 @@ const ImageMobileWrapper = styled(motion.div)`
 `
 
 const ImageDesktopWrapper = styled.div`
-  height: 500px;
+  max-height: 500px;
   overflow: hidden;
 `
 

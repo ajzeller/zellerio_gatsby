@@ -11,3 +11,7 @@ export const ContainerBodyWidth = styled.div`
   max-width: ${props => props.theme.theme.contentWidths.body};
   margin: 0 auto;
 `
+
+export const ContainerMain = styled(ContainerBodyWidth)`
+  padding: 24px;
+`

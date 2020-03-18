@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import BlockContent from '../components/block-content'
 import Container from '../components/container'
@@ -6,6 +7,8 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import PeopleGrid from '../components/people-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import { ContainerFullWidth, ContainerBodyWidth, ContainerMain } from '../containers'
+import { H1, H2, H3, H4, H5, Paragraph } from '../components'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 
 import { responsiveTitle1 } from '../components/typography.module.css'
@@ -58,10 +61,10 @@ const AboutPage = props => {
   return (
     <Layout>
       <SEO title={page.title} />
-      <Container>
-        <h1>{page.title}</h1>
+      <ContainerMain>
+        <H1>{page.title}</H1>
         <BlockContent blocks={page._rawBody || []} />
-      </Container>
+      </ContainerMain>
     </Layout>
   )
 }

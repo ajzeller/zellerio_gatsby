@@ -19,4 +19,9 @@ export const H4 = styled.h4`
 
 export const Paragraph = styled.p`
   font-size: 1rem;
+
+  a{
+    color: ${props => props.theme.theme.text.primary};
+    border-bottom: 4px solid ${props => props.theme.theme.border.secondary};
+  }
 `

@@ -23,8 +23,8 @@ const light = {
 
 const dark = {
   bg: {
-    primary: '#121212',
-    secondary: '#282828',
+    primary: '#14181B',
+    secondary: '#232A2F',
     tertiary: '#181818',
     inset: '#111111',
     input: 'rgba(191,193,201,0.12)'
@@ -71,7 +71,9 @@ const defaultTheme = {
   },
   colors: {
     spotifyGreen: '#1DB954',
-    spotifyBlue: '#4077CB'
+    spotifyBlue: '#4077CB',
+    footerBg: '#14181B',
+    footerBorder: '#2E363E'
   },
   buttons: {
     blackTransparent: 'rgba(0,0,0,0.1)',

@@ -3,13 +3,8 @@ import React, { useState } from 'react'
 import { motion } from "framer-motion";
 import styled from 'styled-components'
 
-import Icon from './icons'
-import { cn } from '../lib/helpers'
-import styles from './header.module.css'
-import Logo from '../assets/logo.svg'
 import Toggler from './toggler'
 import { ContainerFullWidth, ContainerBodyWidth } from '../containers'
-
 import { FaGithub, FaDribbble, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 
@@ -77,12 +72,13 @@ const Nav = styled.nav`
 const SocialIcons = styled.div`
   display: grid;
   grid-template-columns: repeat(4, auto);
+  grid-gap: 12px;
   justify-items: center;
   align-items: center;
 
   .icon {
     display: block;
-    margin: 0 0 0 12px;
+    /* margin: 0 0 0 12px; */
   }
 
   a {
@@ -103,47 +99,6 @@ const Hamburger = styled.div`
     display: block;
   }
 `
-
-// const Dropdown = styled.div`
-//   display: grid;
-//   z-index: 100;
-//   position: fixed;
-//   top: 0px;
-//   left: 0px;
-//   height: 100vh;
-//   width: 100%;
-//   /* background-color: ${props => props.theme.theme.bg.primary}; */
-//   background-color: white;
-//   /* align-items: center; */
-//   align-content: space-between;	
-//   justify-content: center;
-//   margin: 0;
-//   box-sizing: border-box;
-//   padding: 0 0 16px 0;
-
-//   ul{
-//     list-style-type: none;
-//     margin: 0;
-//     padding: 0;
-
-//     li {
-//       text-align: center;
-//       margin: 25px 0;
-
-//       a{
-//         color: ${props => props.theme.theme.text.tertiary};
-//         text-decoration: none;
-//         font-size: 1rem;
-//       }
-
-//       &.current{
-//           a {
-//             border-bottom: 0;
-//           }
-//     }
-//   }
-// }
-// `
 
 const Dropdown = styled(motion.div)`
   /* display: grid; */
@@ -199,52 +154,40 @@ const CloseBtn = styled.div`
   padding: 24px 24px 24px 0;
 `
 
+export const navList = (
+  <ul>
+    <li>
+      <Link to='/about/'>About</Link>
+    </li>
+    <li>
+      <Link to='/projects/'>Projects</Link>
+    </li>
+    <li>
+      <Link to='/blog/'>Blog</Link>
+    </li>
+    {/* <li>
+      <Link to='/photo/'>Photography</Link>
+    </li> */}
+  </ul>)
+
+export const socialList = (
+  <SocialIcons>
+    <a href="https://github.com/ajzeller" target="_blank" rel="noopener">
+      <FaGithub size='24px' className='icon' />
+    </a>
+    <a href="https://dribbble.com/andrewjzeller" target="_blank" rel="noopener">
+      <FaDribbble size='24px' className='icon' />
+    </a>
+    <a href="https://www.linkedin.com/in/andrewjzeller/" target="_blank" rel="noopener">
+      <FaLinkedin size='24px' className='icon' />
+    </a>
+    <a href="https://twitter.com/andrewjzeller" target="_blank" rel="noopener">
+      <FaTwitter size='24px' className='icon' />
+    </a>
+  </SocialIcons>)
+
 const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
   const [isMenuVisible, setIsMenuVisible] = useState(false)
-
-  const navList = (
-    <ul>
-      <li>
-        <Link to='/about/'>About</Link>
-      </li>
-      <li>
-        <Link to='/projects/'>Projects</Link>
-      </li>
-      <li>
-        <Link to='/blog/'>Blog</Link>
-      </li>
-      <li>
-        <Link to='/photo/'>Photo</Link>
-      </li>
-    </ul>)
-
-  const socialList = (
-    <SocialIcons>
-      <a href="https://github.com/ajzeller" target="_blank">
-        <FaGithub size='24px' className='icon' />
-      </a>
-      <a href="https://dribbble.com/andrewjzeller" target="_blank">
-        <FaDribbble size='24px' className='icon' />
-      </a>
-      <a href="https://www.linkedin.com/in/andrewjzeller/" target="_blank">
-        <FaLinkedin size='24px' className='icon' />
-      </a>
-      <a href="https://twitter.com/andrewjzeller" target="_blank">
-        <FaTwitter size='24px' className='icon' />
-      </a>
-    </SocialIcons>)
-
-  // const dropdown = (
-  //   <Dropdown>
-  //     <CloseBtn>
-  //       <Hamburger>
-  //         <IoMdClose size='24px' onClick={() => setIsMenuVisible(prev => !prev)} />
-  //       </Hamburger>
-  //     </CloseBtn>
-  //     {navList}
-  //     {socialList}
-  //   </Dropdown>
-  // )
 
   const dropdown = (
     <Dropdown
@@ -289,38 +232,5 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
   </ContainerFullWidth>
   )
 }
-
-
-
-  // <div className={styles.root}>
-  //   <div className={styles.wrapper}>
-  //     <h1 className={styles.branding}>
-  //       <Link to='/'>
-  //         <Logo />
-  //       </Link>
-  //     </h1>
-
-  //     <button className={styles.toggleNavButton} onClick={showNav ? onHideNav : onShowNav}>
-  //       <Icon symbol='hamburger' />
-  //     </button>
-
-  //     <nav className={cn(styles.nav, showNav && styles.showNav)}>
-  //       <ul>
-  //         <li>
-  //           <Link to='/about/'>About</Link>
-  //         </li>
-  //         <li>
-  //           <Link to='/projects/'>Projects</Link>
-  //         </li>
-  //         <li>
-  //           <Link to='/blog/'>Blog</Link>
-  //         </li>
-  //         <li>
-  //           <Link to='/contact/'>Contact</Link>
-  //         </li>
-  //       </ul>
-  //     </nav>
-  //   </div>
-  // </div>
 
 export default Header

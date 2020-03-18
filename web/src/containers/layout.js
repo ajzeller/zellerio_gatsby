@@ -6,6 +6,15 @@ const query = graphql`
   query SiteTitleQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
+      logoText
+      projects {
+        name
+        slug {
+          _key
+          _type
+          current
+        }
+      }
     }
     companyInfo: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
       name
@@ -15,6 +24,7 @@ const query = graphql`
       city
       country
     }
+
   }
 `
 
@@ -46,6 +56,8 @@ function LayoutContainer (props) {
             showNav={showNav}
             companyInfo={data.companyInfo}
             siteTitle={data.site.title}
+            logoText={data.site.logoText}
+            projects={data.site.projects}
             onHideNav={handleHideNav}
             onShowNav={handleShowNav}
           />

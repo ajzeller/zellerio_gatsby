@@ -75,7 +75,7 @@ const Masthead = ( {data} ) => {
 
           <p>I am a <span className="bold">frontend developer</span> living in Mountain View, California.</p>
 
-          <p>I love designing and building web apps that are fast, useful and elegant.</p>
+          <p>I love designing and developing web apps that are fast, useful and elegant.</p>
           
           <Label style={{marginTop: '50px'}}>My Toolbox</Label>
           <SkillsGrid>
