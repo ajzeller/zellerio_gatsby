@@ -171,7 +171,7 @@ const ProjectCard = ({projectData}) => {
           <p>{summary}</p>
 
           <ToolGrid>
-            {tools.map(item => (<ToolItem toolData={item}/>) )}
+            {tools.map(item => (<ToolItem toolData={item} key={`tool-${name}-${item.name}`} />) )}
           </ToolGrid>
 
           <ButtonGroup>

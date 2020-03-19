@@ -21,7 +21,10 @@ export default {
       // you want and decide how you want to deal with it where you want to
       // use your content.
       styles: [{ title: 'Normal', value: 'normal' }],
-      lists: [],
+      lists: [
+        {title: 'Numbered', value: 'number'},
+        {title: 'Bullet', value: 'bullet'}
+      ],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic

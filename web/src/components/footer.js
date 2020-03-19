@@ -112,7 +112,11 @@ const Footer = ( { logoText, projects } ) => {
             <span className='bold' >Projects</span>
           </Link>
           <ul>
-            {projects.map(project => (<li><Link to={`/projects/${project.slug.current}/`}>{project.name}</Link></li>))}
+            {projects.map(project => (
+              <li key={`${project.name}-footer`}>
+                <Link to={`/projects/${project.slug.current}/`}>{project.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
