@@ -30,7 +30,17 @@ module.exports = {
           include: /assets/ // See below to configure properly
         }
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-46643989-4",
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
+        cookieDomain: "https://zeller.io",
+      },
+    },
   ]
 }
 
