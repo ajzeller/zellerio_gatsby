@@ -89,18 +89,22 @@ const SocialIcons = styled.div`
     color: ${props => props.theme.theme.text.tertiary};
   }
 `
-
-const Hamburger = styled.div`
+const MobileNav = styled.div`
   display: none;
   justify-self: right;
+
+  @media (max-width: 700px) {
+    display: flex;
+    align-items: center;
+  }
+`
+
+const Hamburger = styled.div`
+  margin: 0 0 0 12px;
 
   svg{
     display: block;
     color: ${props => props.theme.theme.text.primary};
-  }
-
-  @media (max-width: 700px) {
-    display: block;
   }
 `
 
@@ -225,9 +229,13 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
         <Toggler />
       </Nav>
 
-    <Hamburger>
-          <IoMdMenu size='24px' onClick={() => setIsMenuVisible(prev => !prev)} />
-    </Hamburger>
+      <MobileNav>
+        <Toggler />
+        <Hamburger>
+              <IoMdMenu size='24px' onClick={() => setIsMenuVisible(prev => !prev)} />
+        </Hamburger>
+      </MobileNav>
+
 
     </HeaderContainer>
 
