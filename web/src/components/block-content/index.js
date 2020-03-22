@@ -1,6 +1,7 @@
 import BaseBlockContent from '@sanity/block-content-to-react'
 import React from 'react'
 import styled from 'styled-components'
+import SyntaxHighlighter from 'react-syntax-highlighter';
 import { H1, H2, H3, H4, H5, Paragraph } from '../'
 import Figure from './figure'
 import Slideshow from './slideshow'
@@ -49,6 +50,17 @@ const serializers = {
     },
     slideshow (props) {
       return <Slideshow {...props.node} />
+    },
+    code ({ node = {} }) {
+      const {code, language} = node
+
+      if(!code){ return null }
+
+      return(
+        <SyntaxHighlighter language={language || 'text' }>
+          {code}
+        </SyntaxHighlighter>
+      )
     }
   },
   marks: {

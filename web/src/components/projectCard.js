@@ -151,7 +151,7 @@ const ProjectCard = ({projectData}) => {
   return(
     // <Link to={`/projects/${slug.current}`}>
       <Card color={color}>
-        <a href={`${projectUrl}`} target="_blank">
+        <Link to={`/projects/${slug.current}`}>
           <ImageWrapper
             whileHover={width > 700 ? {
               scale: 1.05,
@@ -164,7 +164,7 @@ const ProjectCard = ({projectData}) => {
               objectPosition="center top"
             />
           </ImageWrapper>
-        </a>
+        </Link>
 
         <ProjectInfo>
           <H2>{name}</H2>
@@ -199,7 +199,6 @@ const ProjectCard = ({projectData}) => {
 
         </ProjectInfo>
       </Card>
-    // </Link>
   )
 }
 

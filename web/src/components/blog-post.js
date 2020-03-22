@@ -1,16 +1,24 @@
 import { format, distanceInWords, differenceInDays } from 'date-fns'
 import React from 'react'
+import styled from 'styled-components'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
+import { ContainerFullWidth, ContainerBodyWidth, ContainerMain } from '../containers'
+import Img from "gatsby-image"
+import { H1, H2, H3, H4, H5, Paragraph } from '../components'
 
 import styles from './blog-post.module.css'
 
 function BlogPost (props) {
   const { _rawBody, authors, categories, title, mainImage, publishedAt } = props
-  return (
+  return (<>
+    <article>
+
+    </article>
+
     <article className={styles.root}>
       {mainImage && mainImage.asset && (
         <div className={styles.mainImage}>
@@ -33,8 +41,8 @@ function BlogPost (props) {
           <aside className={styles.metaContent}>
             {publishedAt && (
               <div className={styles.publishedAt}>
-                {differenceInDays(new Date(publishedAt), new Date()) > 3
-                  ? distanceInWords(new Date(publishedAt), new Date())
+                {differenceInDays(new Date(), new Date(publishedAt)) <= 14
+                  ? `${distanceInWords(new Date(publishedAt), new Date())} ago`
                   : format(new Date(publishedAt), 'MMMM Do YYYY')}
               </div>
             )}
@@ -53,6 +61,7 @@ function BlogPost (props) {
         </div>
       </Container>
     </article>
+    </>
   )
 }
 

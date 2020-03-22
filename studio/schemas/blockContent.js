@@ -78,6 +78,10 @@ export default {
     },
     {
       type: 'slideshow'
+    },
+    {
+      type: 'code',
+      title: 'Code snippet'
     }
   ]
 }

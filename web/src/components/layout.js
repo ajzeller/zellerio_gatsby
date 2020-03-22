@@ -10,6 +10,7 @@ import '../styles/styles.scss'
 const Content = styled.div`
   color: ${props => props.theme.theme.text.primary};
   background-color: ${props => props.theme.theme.bg.primary};
+  min-height: calc(100vh - 80px - 167px);
   /* padding: 24px 0 0 0; */
 
   p, li{
@@ -30,35 +31,6 @@ const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitl
 
     <Content className={styles.content}>{children}</Content>
     <Footer logoText={logoText} projects={projects} />
-
-    {/* <footer className={styles.footer}>
-      <div className={styles.footerWrapper}>
-        <div className={styles.companyAddress}>
-          {companyInfo && (
-            <div>
-              {companyInfo.name}
-              <br />
-              {companyInfo.address1}
-              <br />
-              {companyInfo.address2 && (
-                <span>
-                  {companyInfo.address2}
-                  <br />
-                </span>
-              )}
-              {companyInfo.zipCode} {companyInfo.city}
-              {companyInfo.country && <span>, {companyInfo.country}</span>}
-            </div>
-          )}
-        </div>
-
-        <div className={styles.siteInfo}>
-          © {new Date().getFullYear()}, Built with <a href='https://www.sanity.io'>Sanity</a> &amp;
-          {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
-        </div>
-      </div>
-    </footer> */}
   </Provider>
 )
 

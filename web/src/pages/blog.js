@@ -6,6 +6,8 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import { H1, H2, H3, H4, H5, Paragraph } from '../components'
+import { ContainerFullWidth, ContainerBodyWidth, ContainerMain } from '../containers'
 
 import { responsiveTitle1 } from '../components/typography.module.css'
 
@@ -19,6 +21,9 @@ export const query = graphql`
           mainImage {
             asset {
               _id
+              fluid {
+                ...GatsbySanityImageFluid
+              }
             }
             alt
           }
@@ -49,10 +54,10 @@ const BlogPage = props => {
   return (
     <Layout>
       <SEO title='Blog' />
-      <Container>
-        <h1 className={responsiveTitle1}>Blog</h1>
+      <ContainerMain>
+        <H1>Blog</H1>
         {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
-      </Container>
+      </ContainerMain>
     </Layout>
   )
 }
