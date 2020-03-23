@@ -202,7 +202,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
       animate={
         isMenuVisible
           ? { x: 0, y: 0, display: 'grid', opacity: 100, scale: 1 }
-          : { x: 0, y: '-100vh', display: 'grid', opacity: 0, scale: 0 }
+          : { x: 0, y: '-100vh', display: 'grid', opacity: 0, scale: 1 }
       }
     >
       <CloseBtn>

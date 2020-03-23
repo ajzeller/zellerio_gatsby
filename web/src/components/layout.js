@@ -19,7 +19,7 @@ const Content = styled.div`
       border-bottom: 4px solid ${props => props.theme.theme.border.secondary};
       
       &:hover {
-        
+        background-color: ${props => props.theme.theme.border.tertiary};
       }
     }
   }

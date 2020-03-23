@@ -16,7 +16,8 @@ const light = {
   },
   border: {
     primary: '#eff0f5',
-    secondary: '#DDDDDD'
+    secondary: '#DDDDDD',
+    tertiary: '#EAEAEA',
   }
   // ...
 }
@@ -39,7 +40,8 @@ const dark = {
   },
   border: {
     primary: '#282828',
-    secondary: '#2D2D2D'
+    secondary: '#2D2D2D',
+    tertiary: '#525560'
   }
   // ...
 }

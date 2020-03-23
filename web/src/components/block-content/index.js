@@ -1,12 +1,19 @@
 import BaseBlockContent from '@sanity/block-content-to-react'
 import React from 'react'
 import styled from 'styled-components'
-import SyntaxHighlighter from 'react-syntax-highlighter';
+// import SyntaxHighlighter from 'react-syntax-highlighter';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { H1, H2, H3, H4, H5, Paragraph } from '../'
 import Figure from './figure'
 import Slideshow from './slideshow'
 
 import typography from '../typography.module.css'
+
+const CodeWrapper = styled.div`
+  display: grid;
+  /* overflow-x: scroll; */
+`
 
 const serializers = {
   types: {
@@ -57,9 +64,15 @@ const serializers = {
       if(!code){ return null }
 
       return(
-        <SyntaxHighlighter language={language || 'text' }>
-          {code}
-        </SyntaxHighlighter>
+        <CodeWrapper>
+          <SyntaxHighlighter 
+            language={language || 'text' } 
+            style={tomorrow}
+            customStyle={{padding: '12px', borderRadius: '12px'}}
+          >
+            {code}
+          </SyntaxHighlighter>
+        </CodeWrapper>
       )
     }
   },
