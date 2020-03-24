@@ -33,6 +33,11 @@ export default {
       }
     },
     {
+      name: 'metaImage',
+      title: 'Meta image',
+      type: 'mainImage'
+    },
+    {
       name: 'author',
       title: 'Author',
       type: 'string'

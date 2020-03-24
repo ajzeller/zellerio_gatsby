@@ -14,7 +14,8 @@ const detailsQuery = graphql`
   }
 `
 
-function SEO ({ description, lang, meta, keywords = [], title }) {
+function SEO ({ description, lang, meta, keywords = [], title, metaImage }) {
+
   return (
     <StaticQuery
       query={detailsQuery}
@@ -62,6 +63,10 @@ function SEO ({ description, lang, meta, keywords = [], title }) {
               {
                 name: 'twitter:description',
                 content: metaDescription
+              },
+              {
+                name: 'twitter:image',
+                content: metaImage.asset.fixed.src
               }
             ]
               .concat(

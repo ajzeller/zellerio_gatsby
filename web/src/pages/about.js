@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import Img from "gatsby-image"
 import { graphql } from 'gatsby'
 import BlockContent from '../components/block-content'
-import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
-import PeopleGrid from '../components/people-grid'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import { ContainerFullWidth, ContainerBodyWidth, ContainerMain } from '../containers'
@@ -12,6 +11,14 @@ import { H1, H2, H3, H4, H5, Paragraph } from '../components'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 
 import { responsiveTitle1 } from '../components/typography.module.css'
+
+const Image = styled(Img)`
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 200px;
+  justify-self: center;
+`
 
 export const query = graphql`
   query AboutPageQuery {
@@ -34,11 +41,28 @@ export const query = graphql`
         }
       }
     }
+    myInfo: sanityMyInfo {
+      mainImage {
+        asset {
+          fluid {
+            base64
+            aspectRatio
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            sizes
+          }
+        }
+        alt
+      }
+    }
   }
 `
 
 const AboutPage = props => {
   const { data, errors } = props
+  console.log(data)
 
   if (errors) {
     return (
@@ -49,8 +73,7 @@ const AboutPage = props => {
   }
 
   const page = data && data.page
-  const personNodes =
-    data && data.people && mapEdgesToNodes(data.people).filter(filterOutDocsWithoutSlugs)
+  const profileImage = data && data.myInfo.mainImage
 
   if (!page) {
     throw new Error(
@@ -62,7 +85,7 @@ const AboutPage = props => {
     <Layout>
       <SEO title={page.title} />
       <ContainerMain>
-        <H1>{page.title}</H1>
+        <Image fluid={profileImage.asset.fluid} />
         <BlockContent blocks={page._rawBody || []} />
       </ContainerMain>
     </Layout>
