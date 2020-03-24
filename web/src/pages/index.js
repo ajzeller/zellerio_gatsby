@@ -38,7 +38,7 @@ const IndexPage = props => {
 
   return (
     <Layout currentPage='index'>
-      <SEO title={data.site.title} description={data.site.description} keywords={data.site.keywords} metaImage={data.site.metaImage} />
+      <SEO title={data.site.title} description={data.site.description} keywords={data.site.keywords} />
         <Masthead data={data} />
         <ProjectsPanel data={data} />
     </Layout>
@@ -53,13 +53,6 @@ export const query = graphql`
       title
       description
       keywords
-      metaImage {
-        asset {
-          fixed(width:1200) {
-            src
-          }
-        }
-      }
       projects {
         githubUrl
         color

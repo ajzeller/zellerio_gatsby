@@ -10,6 +10,13 @@ const detailsQuery = graphql`
       description
       keywords
       author
+      metaImage {
+        asset {
+          fixed(width:1200) {
+            src
+          }
+        }
+      }
     }
   }
 `
@@ -66,7 +73,7 @@ function SEO ({ description, lang, meta, keywords = [], title, metaImage }) {
               },
               {
                 name: 'twitter:image',
-                content: metaImage.asset.fixed.src
+                content: data.site.metaImage.asset.fixed.src
               }
             ]
               .concat(
