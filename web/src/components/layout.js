@@ -25,9 +25,9 @@ const Content = styled.div`
   }
 `
 
-const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitle, logoText, projects }) => (
+const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitle, logoText, projects, currentPage }) => (
   <Provider>
-    <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
+    <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} currentPage={currentPage} />
 
     <Content className={styles.content}>{children}</Content>
     <Footer logoText={logoText} projects={projects} />

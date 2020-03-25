@@ -61,6 +61,12 @@ const Nav = styled.nav`
     text-decoration: none;
     font-size: 1rem;
     /* text-transform: uppercase; */
+    padding: 6px 0;
+
+    &.current {
+      /* color: blue; */
+      border-bottom: 2px solid ${props => props.theme.theme.colors.blue};
+    }
 
     &:hover {
       color: ${props => props.theme.theme.text.primary};
@@ -162,21 +168,25 @@ const CloseBtn = styled.div`
   padding: 24px 24px 24px 0;
 `
 
-export const navList = (
-  <ul>
-    <li>
-      <Link to='/about/'>About</Link>
-    </li>
-    <li>
-      <Link to='/projects/'>Projects</Link>
-    </li>
-    <li>
-      <Link to='/blog/'>Blog</Link>
-    </li>
-    {/* <li>
-      <Link to='/photo/'>Photography</Link>
-    </li> */}
-  </ul>)
+export const NavList = ({ currentPage }) => {
+
+  return(
+    <ul>
+      <li>
+        <Link to='/about/' className={currentPage == 'about' && `current`}>About</Link>
+      </li>
+      <li>
+        <Link to='/projects/' className={currentPage == 'projects' && `current`}>Projects</Link>
+      </li>
+      <li>
+        <Link to='/blog/' className={currentPage == 'blog' && `current`}>Blog</Link>
+      </li>
+      {/* <li>
+        <Link to='/photo/'>Photography</Link>
+      </li> */}
+    </ul>
+  )
+}
 
 export const socialList = (
   <SocialIcons>
@@ -194,7 +204,10 @@ export const socialList = (
     </a>
   </SocialIcons>)
 
-const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
+const Header = ({ onHideNav, onShowNav, showNav, siteTitle, currentPage }) => {
+  
+  console.log(currentPage)
+
   const [isMenuVisible, setIsMenuVisible] = useState(false)
 
   const dropdown = (
@@ -210,7 +223,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
           <IoMdClose size='24px' onClick={() => setIsMenuVisible(prev => !prev)} />
         </Hamburger>
       </CloseBtn>
-      {navList}
+      <NavList currentPage={currentPage} />
       {socialList}
     </Dropdown>
   )
@@ -224,7 +237,7 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => {
       </Link>
 
       <Nav>
-        {navList}
+        <NavList currentPage={currentPage} />
         {socialList}
         <Toggler />
       </Nav>

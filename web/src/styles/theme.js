@@ -73,7 +73,7 @@ const defaultTheme = {
   },
   colors: {
     spotifyGreen: '#1DB954',
-    spotifyBlue: '#4077CB',
+    blue: '#2C7AF8',
     footerBg: '#14181B',
     footerBorder: '#2E363E'
   },

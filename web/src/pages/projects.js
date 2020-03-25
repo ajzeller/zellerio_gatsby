@@ -78,7 +78,7 @@ const ProjectsPage = props => {
   const projectNodes =
     data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
   return (
-    <Layout>
+    <Layout currentPage='projects'>
       <SEO title='Projects' />
       <ContainerMain>
         <H1>Projects</H1>

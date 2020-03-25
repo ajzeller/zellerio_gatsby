@@ -82,7 +82,7 @@ const AboutPage = props => {
   }
 
   return (
-    <Layout>
+    <Layout currentPage='about'>
       <SEO title={page.title} />
       <ContainerMain>
         <Image fluid={profileImage.asset.fluid} />

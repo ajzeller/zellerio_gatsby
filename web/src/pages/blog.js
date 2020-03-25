@@ -43,7 +43,7 @@ const BlogPage = props => {
 
   if (errors) {
     return (
-      <Layout>
+      <Layout currentPage='blog'>
         <GraphQLErrorList errors={errors} />
       </Layout>
     )
@@ -52,7 +52,7 @@ const BlogPage = props => {
   const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
 
   return (
-    <Layout>
+    <Layout currentPage='blog'>
       <SEO title='Blog' />
       <ContainerMain>
         <H1>Blog</H1>
