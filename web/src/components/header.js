@@ -9,7 +9,7 @@ import { FaGithub, FaDribbble, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 
 const HeaderContainerFullWidth = styled(ContainerFullWidth)`
-  background-color: ${props => props.theme.theme.bg.primary};
+  background-color: ${props => props.theme.theme.bg.secondary};
 `
 
 const HeaderContainer = styled(ContainerBodyWidth)`

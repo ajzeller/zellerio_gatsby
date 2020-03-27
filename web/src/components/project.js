@@ -117,17 +117,19 @@ const Project = (props) => {
         <ProjectContainer>
           <Title>{name}</Title>
           <SummaryText>{summary}</SummaryText>
-
           <ProjectButtonGroup>
-            <a href={githubUrl} target="_blank">
-              <ButtonSecondary 
-                color={color}                 
-                whileHover={{
-                  scale: 1.05,
-                  }}>
-                Github <FaGithub size="20px" />
-              </ButtonSecondary>
-            </a>
+
+            { githubUrl && (
+              <a href={githubUrl} target="_blank">
+                <ButtonSecondary 
+                  color={color}                 
+                  whileHover={{
+                    scale: 1.05,
+                    }}>
+                  Github <FaGithub size="20px" />
+                </ButtonSecondary>
+              </a>
+            )}
 
             <a href={`${projectUrl}`} target="_blank">
               <ButtonPrimary 

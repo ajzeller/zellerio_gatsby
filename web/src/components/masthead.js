@@ -2,12 +2,26 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from "gatsby-image"
 import { FaReact, FaDatabase } from "react-icons/fa";
+import { IoIosArrowDown } from "react-icons/io";
+import { Link } from 'gatsby'
+import { IoMdArrowForward } from "react-icons/io";
+
 import { motion } from "framer-motion";
 import { ContainerFullWidth, ContainerBodyWidth } from '../containers'
 import { H1, H2, H3, H4, H5, Paragraph } from './'
 
+const Intro = styled(H1)`
+  /* font-size: 2rem; */
+  margin: 0 0 12px 0;
+`
+
+const ToolsIntro = styled(H2)`
+  font-size: 1.2rem;
+  margin: 50px 0 12px 0;
+`
+
 const MastheadContainer = styled.div`
-  background-color: ${props => props.theme.theme.bg.primary};
+  /* background-color: ${props => props.theme.theme.bg.primary}; */
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 30px;
@@ -21,7 +35,7 @@ const MastheadContainer = styled.div`
   }
 `
 
-const MastheadText = styled.div`
+const MastheadText = styled(motion.div)`
   margin: 0px 0 0 0;
   font-size: 1rem;
 
@@ -56,13 +70,30 @@ const SkillsGrid = styled.div`
   p {
     margin: 0;
   }
+
+  a {
+    display: flex;
+    align-items: center;
+    color: ${props => props.theme.theme.text.primary};
+
+    &:hover {
+      color: ${props => props.theme.theme.colors.blue};
+    }
+
+    svg {
+      margin: 0 0 0 4px;
+    }
+  }
 `
 
-const MotionContainer = styled.div`
-  background-color: blue;
-  padding: 20px;
-
+const LinkWrapper = styled(motion.div)`
 `
+
+const SvgWrapper = styled(motion.div)`
+  display: flex;
+`
+
+const EmptyCell = styled.div``
 
 const Masthead = ( {data} ) => {
   // console.log(data)
@@ -71,14 +102,18 @@ const Masthead = ( {data} ) => {
     <ContainerBodyWidth>
       <MastheadContainer>
         <Image fluid={data.myInfo.mainImage.asset.fluid} />
-        <MastheadText>
-          <p>Hey there, I'm Andrew.</p>
+        <MastheadText
+          initial={{y: 50}}
+          animate={{y: 0 }}
+        >
+          <Intro>I'm Andrew Zeller 👋</Intro>
 
-          <p>I am a <span className="bold">frontend developer</span> living in Mountain View, California.</p>
+          <p>I am a self-taught <span className="bold">frontend engineer</span> living in Mountain View, California.</p>
 
           <p>I love designing and developing web apps that are fast, useful and elegant.</p>
           
-          <Label style={{marginTop: '50px'}}>My Toolbox</Label>
+          {/* <Label style={{marginTop: '50px'}}>My Toolbox</Label> */}
+          <ToolsIntro>My Toolbox</ToolsIntro>
           <SkillsGrid>
             <FaReact size='24px' />
               <div>
@@ -90,6 +125,18 @@ const Masthead = ( {data} ) => {
                 <span className="bold">Backend</span>
                 <p>Express, Node, Chai, MongoDB</p>
               </div>
+              <EmptyCell />
+              <LinkWrapper 
+                whileHover={{
+                  x: 5
+                }}>
+                <Link to='/about/'>
+                  More
+                  <SvgWrapper>
+                    <IoMdArrowForward size='20px' />
+                  </SvgWrapper>
+                </Link>
+              </LinkWrapper>
 
           </SkillsGrid>
           

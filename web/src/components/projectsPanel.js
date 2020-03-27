@@ -13,7 +13,7 @@ const ProjectsPanelContainer = styled(motion.div)`
   border-top-right-radius: 20px;
 
   width: 100%;
-  background-color: ${props => props.theme.theme.bg.secondary};
+  background-color: ${props => props.theme.theme.bg.primary};
   /* box-shadow: 0px -10px 0px 0px rgba(0,0,0,0.05); */
   border-top: 1px solid ${ props => props.theme.theme.border.secondary};
   position: relative;
@@ -39,7 +39,7 @@ const ProjectGrid = styled.div`
   box-sizing: border-box;
 `
 
-const Title = styled(H1)`
+const Title = styled(H2)`
   margin: 0 0 24px 0;
   text-align: center;
 `

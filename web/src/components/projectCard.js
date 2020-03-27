@@ -65,8 +65,8 @@ const ProjectInfo = styled.div`
   align-content: start;
   padding: 24px 24px 24px 0;
 
-  h2{
-    font-size: 2rem;
+  h3{
+    font-size: 1.6rem;
     margin: 20px 0 0 0;
   }
 
@@ -167,7 +167,7 @@ const ProjectCard = ({projectData}) => {
         </Link>
 
         <ProjectInfo>
-          <H2>{name}</H2>
+          <H3>{name}</H3>
           <p>{summary}</p>
 
           <ToolGrid>
@@ -175,16 +175,19 @@ const ProjectCard = ({projectData}) => {
           </ToolGrid>
 
           <ButtonGroup>
-
-            <a href={githubUrl} target="_blank">
-              <ButtonSecondary 
-                color={color}
-                whileHover={{
-                  scale: 1.05,
-                }}>
-                  Github <FaGithub size="20px" />
-              </ButtonSecondary>
-            </a>
+            {
+              githubUrl && (
+                <a href={githubUrl} target="_blank">
+                  <ButtonSecondary 
+                    color={color}
+                    whileHover={{
+                      scale: 1.05,
+                    }}>
+                      Github <FaGithub size="20px" />
+                  </ButtonSecondary>
+                </a>
+              )
+            }
             <Link to={`/projects/${slug.current}`}>
               <ButtonPrimary 
                 color={color}

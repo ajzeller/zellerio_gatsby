@@ -9,17 +9,18 @@ import '../styles/styles.scss'
 
 const Content = styled.div`
   color: ${props => props.theme.theme.text.primary};
-  background-color: ${props => props.theme.theme.bg.primary};
+  background-color: ${props => props.theme.theme.bg.secondary};
   min-height: calc(100vh - 80px - 167px);
   /* padding: 24px 0 0 0; */
 
   p, li{
     a{
       color: ${props => props.theme.theme.text.primary};
-      border-bottom: 4px solid ${props => props.theme.theme.border.secondary};
+      border-bottom: 2px solid ${props => props.theme.theme.border.secondary};
       
       &:hover {
-        background-color: ${props => props.theme.theme.border.tertiary};
+        /* background-color: ${props => props.theme.theme.border.tertiary}; */
+        border-bottom: 2px solid ${props => props.theme.theme.colors.blue};
       }
     }
   }

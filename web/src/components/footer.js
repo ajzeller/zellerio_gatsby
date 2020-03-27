@@ -89,6 +89,9 @@ const Footer = ( { logoText, projects } ) => {
     <li>
       <Link to='/blog'>Blog</Link>
     </li>
+    <li>
+      <Link to='/uses'>Uses</Link>
+    </li>
     {/* <li>
       <Link to='/photo'>Photography</Link>
     </li> */}

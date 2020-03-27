@@ -9,8 +9,13 @@ import Layout from '../containers/layout'
 import { ContainerFullWidth, ContainerBodyWidth, ContainerMain } from '../containers'
 import { H1, H2, H3, H4, H5, Paragraph } from '../components'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
-
+import { IoMdArrowForward } from "react-icons/io";
+import ListItem from '../components/list-item'
 import { responsiveTitle1 } from '../components/typography.module.css'
+
+import ReactSvg from '../assets/react_icon.svg'
+import ReduxSvg from '../assets/redux_icon.svg'
+
 
 const Image = styled(Img)`
   margin: 0 auto;
@@ -19,6 +24,78 @@ const Image = styled(Img)`
   border-radius: 200px;
   justify-self: center;
 `
+
+const SectionTitle = styled(H2)`
+  margin: 12px 0 8px 0;
+`
+
+const Description = styled.span`
+  color: ${props => props.theme.theme.text.tertiary};
+`
+
+const ToolsList = styled.ul`
+  list-style: none;
+
+`
+
+const AboutPage = props => {
+  const { data, errors } = props
+  console.log(data)
+
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    )
+  }
+
+  const page = data && data.page
+  const profileImage = data && data.myInfo.mainImage
+
+  if (!page) {
+    throw new Error(
+      'Missing "About" page data. Open the studio at http://localhost:3333 and add "About" page data and restart the development server.'
+    )
+  }
+
+  return (
+    <Layout currentPage='about'>
+      <SEO title={page.title} />
+      <ContainerMain>
+        <Image fluid={profileImage.asset.fluid} />
+        <BlockContent blocks={page._rawBody || []} />
+        <H2>My Toolbox</H2>
+        <p>These are the tools I use to build apps and sites.</p>
+        <H3>Frameworks & Libraries</H3>
+        <ToolsList>
+          <ListItem name='React' link='' detail='Javascript UI Library' link='https://reactjs.org/' />
+          <ListItem name='Redux' link='' detail='State management' link='https://redux.js.org/' />
+          <ListItem name='Next.js' link='' detail='Framework for React apps' link='https://nextjs.org/' />
+          <ListItem name='Gatsby.js' link='' detail='Framework for React static sites' link='https://www.gatsbyjs.org/' />
+          <ListItem name='Node.js' link='' detail='Javascript Runtime' link='https://nodejs.org/en/' />
+          <ListItem name='Express.js' link='' detail='Web framework for Node.js' link='https://expressjs.com/' />
+        </ToolsList>
+        <H3>Data</H3>
+        <ToolsList>
+          <ListItem name='Sanity.io' link='' detail='Headless CMS' link='https://www.sanity.io/' />
+          <ListItem name='MongoDB' link='' detail='NoSQL database' link='https://www.mongodb.com/' />
+          <ListItem name='D3.js' link='' detail='Javascript library for data visualization' link='https://d3js.org/' />
+        </ToolsList>
+        <H3>Design tools and libraries</H3>
+        <ToolsList>
+          <ListItem name='Sketch App' link='' detail='User Interface design' link='https://www.sketch.com/' />
+          <ListItem name='Styled Components' link='' detail='CSS-in-JS Library for React' link='https://styled-components.com/' />
+          <ListItem name='Framer Motion' link='' detail='Animation library for React' link='https://www.framer.com/motion/' />
+          <ListItem name='SASS' link='' detail='CSS with superpowers' link='https://sass-lang.com/' />
+        </ToolsList>
+
+      </ContainerMain>
+    </Layout>
+  )
+}
+
+export default AboutPage
 
 export const query = graphql`
   query AboutPageQuery {
@@ -59,37 +136,3 @@ export const query = graphql`
     }
   }
 `
-
-const AboutPage = props => {
-  const { data, errors } = props
-  console.log(data)
-
-  if (errors) {
-    return (
-      <Layout>
-        <GraphQLErrorList errors={errors} />
-      </Layout>
-    )
-  }
-
-  const page = data && data.page
-  const profileImage = data && data.myInfo.mainImage
-
-  if (!page) {
-    throw new Error(
-      'Missing "About" page data. Open the studio at http://localhost:3333 and add "About" page data and restart the development server.'
-    )
-  }
-
-  return (
-    <Layout currentPage='about'>
-      <SEO title={page.title} />
-      <ContainerMain>
-        <Image fluid={profileImage.asset.fluid} />
-        <BlockContent blocks={page._rawBody || []} />
-      </ContainerMain>
-    </Layout>
-  )
-}
-
-export default AboutPage

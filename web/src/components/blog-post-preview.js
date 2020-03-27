@@ -19,7 +19,7 @@ const BlogPostPreviewGrid = styled(motion.div)`
   grid-template-columns: auto 1fr;
   grid-gap: 24px;
   justify-content: left;
-  /* border: 1px solid ${props => props.theme.theme.border.secondary}; */
+  border: 1px solid ${props => props.theme.theme.border.primary};
   border-radius: 12px;
   overflow: hidden;
 
