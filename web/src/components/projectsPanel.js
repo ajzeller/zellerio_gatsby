@@ -42,6 +42,7 @@ const ProjectGrid = styled.div`
 const Title = styled(H2)`
   margin: 0 0 24px 0;
   text-align: center;
+  font-size: 1.8rem;
 `
 
 const ProjectsPanel = ({data}) => {

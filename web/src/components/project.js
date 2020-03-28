@@ -46,8 +46,9 @@ const ImageMobileWrapper = styled(motion.div)`
 `
 
 const ImageDesktopWrapper = styled.div`
-  max-height: 500px;
+  max-height: 700px;
   overflow: hidden;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
 `
 
 const ImageGrid = styled.div`

@@ -4,8 +4,11 @@ import { IoMdArrowForward } from "react-icons/io";
 import { motion } from "framer-motion";
 
 const StyledLi = styled.li`
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
+  /* align-content: flex-start; */
+  /* justify-content: left; */
   margin: 0 0 4px 0;
   
   .a_reset {
@@ -18,13 +21,20 @@ const StyledLi = styled.li`
 `
 
 const Detail = styled.span`
+  /* display: inline-flex; */
+  align-items: center;
+  /* flex-wrap: wrap; */
   margin: 0 0 0 4px;
   color: ${props => props.theme.theme.text.tertiary};
 `
 
 const StyledLink = styled.a`
-  display: flex;
+  /* display: grid; */
+  /* grid-template-columns: auto 1fr; */
+  display: inline-flex;
   align-items: center;
+  /* flex-wrap: wrap; */
+  /* align-content: flex-start; */
   border-bottom: 0;
 
   .isHovered{
@@ -40,12 +50,13 @@ const StyledLink = styled.a`
   }
 `
 
-const IconWrapper = styled(motion.div)`
-  display: flex;
+const IconWrapper = styled(motion.span)`
+  display: inline-flex;
+  align-items: flex-end;
   margin: 0 4px 0 0;
 `
 
-const ListItem = ({icon = <IoMdArrowForward size='20px' />, name, detail, link }) => {
+const ListItem = ({icon = <IoMdArrowForward size='16px' />, name, detail, link }) => {
   const [isHovered, setIsHovered] = useState(false)
   
   console.log(isHovered)
@@ -59,7 +70,7 @@ const ListItem = ({icon = <IoMdArrowForward size='20px' />, name, detail, link }
         onMouseEnter={() => setIsHovered(true)} 
         onMouseLeave={() => setIsHovered(false)}
       >
-        <IconWrapper
+        {/* <IconWrapper
           animate={ isHovered ? {
             x: [0, -5, 0]
           } : 
@@ -70,7 +81,7 @@ const ListItem = ({icon = <IoMdArrowForward size='20px' />, name, detail, link }
           className={isHovered && `isHovered` } 
         >
           {icon}
-        </IconWrapper>
+        </IconWrapper> */}
         <span>{name}</span>
       </StyledLink>
         <Detail>

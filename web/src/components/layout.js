@@ -6,6 +6,7 @@ import Footer from './footer'
 import '../styles/layout.css'
 import styles from './layout.module.css'
 import '../styles/styles.scss'
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Content = styled.div`
   color: ${props => props.theme.theme.text.primary};

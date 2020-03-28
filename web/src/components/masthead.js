@@ -108,7 +108,7 @@ const Masthead = ( {data} ) => {
         >
           <Intro>I'm Andrew Zeller 👋</Intro>
 
-          <p>I am a self-taught <span className="bold">frontend engineer</span> living in Mountain View, California.</p>
+          <p>A self-taught <span className="bold">frontend engineer</span> living in Mountain View, California.</p>
 
           <p>I love designing and developing web apps that are fast, useful and elegant.</p>
           

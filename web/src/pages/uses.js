@@ -11,7 +11,8 @@ import { H1, H2, H3, H4, H5, Paragraph } from '../components'
 import ListItem from '../components/list-item'
 
 const ToolsList = styled.ul`
-  list-style: none;
+  /* list-style: none; */
+  /* padding: 0; */
 `
 
 const UsesPage = props => {
