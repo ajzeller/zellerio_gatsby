@@ -22,6 +22,7 @@ const BlogPostPreviewGrid = styled(motion.div)`
   border: 1px solid ${props => props.theme.theme.border.primary};
   border-radius: 12px;
   overflow: hidden;
+  margin: 0 0 24px 0;
 
   &:hover{
     /* background-color: ${props => props.theme.theme.border.secondary}; */

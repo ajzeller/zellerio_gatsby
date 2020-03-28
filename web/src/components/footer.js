@@ -10,6 +10,27 @@ const FooterContainerFullWidth = styled(ContainerFullWidth)`
   background-color: ${ props => props.theme.theme.bg.primary};
   /* background-color: ${ props => props.theme.theme.colors.footerBg}; */
   border-top: 1px solid ${ props => props.theme.theme.border.secondary};
+
+  p{
+    margin: 12px 0 0 0;
+  }
+`
+
+const FooterBody = styled(ContainerBodyWidth)`
+  padding: 24px 24px 12px 24px;
+  color: ${props => props.theme.theme.text.tertiary};
+
+  p {
+    a{
+      color: ${props => props.theme.theme.text.tertiary};
+      /* border-bottom: 2px solid ${props => props.theme.theme.border.secondary}; */
+      
+      &:hover {
+        border-bottom: 2px solid ${props => props.theme.theme.colors.blue};
+      }
+    }
+  }
+
 `
 
 const FooterGrid = styled(ContainerBodyWidth)`
@@ -19,7 +40,7 @@ const FooterGrid = styled(ContainerBodyWidth)`
   align-items: start;
   justify-items: left;
   /* margin: -20px 0 0 0; */
-  padding: 24px 24px 24px 24px;
+  /* padding: 24px 24px 12px 24px; */
   /* color: white; */
 
   a {
@@ -73,10 +94,22 @@ const FooterGrid = styled(ContainerBodyWidth)`
 `
 
 const Social = styled.div`
+  height: 100%;
   justify-self: right;
+  display: grid;
+  justify-items: right;
+  align-content: space-between;
+
+  p{
+    text-align: right;
+  }
 
   @media (max-width: 600px){
     justify-self: left;
+    justify-items: left;
+
+  p{
+    text-align: left;
   }
 `
 
@@ -102,32 +135,44 @@ const Footer = ( { logoText, projects } ) => {
 
   return(
     <FooterContainerFullWidth>
-      <FooterGrid>
-        <div>
-          <Link to='/'>
-            <span className='bold' >{ logoText }</span>
-          </Link>
-          {linksList}
-        </div>
+      <FooterBody>
+        <FooterGrid>
+          <div>
+            <Link to='/'>
+              <span className='bold' >{ logoText }</span>
+            </Link>
+            {linksList}
+          </div>
 
-        <div>
-          <Link to='/projects/'>
-            <span className='bold' >Projects</span>
-          </Link>
-          <ul>
-            {projects.map(project => (
-              <li key={`${project.name}-footer`}>
-                <Link to={`/projects/${project.slug.current}/`}>{project.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <div>
+            <Link to='/projects/'>
+              <span className='bold' >Projects</span>
+            </Link>
+            <ul>
+              {projects.map(project => (
+                <li key={`${project.name}-footer`}>
+                  <Link to={`/projects/${project.slug.current}/`}>{project.name}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <Social>
-          {socialList}
-        </Social>
-        
-      </FooterGrid>
+          <Social>
+            {socialList}
+            <div>
+              <p>
+                Google <a href='https://policies.google.com/privacy' target="_blank">Privacy Policy </a> 
+                and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+              </p>
+              <p>
+                © 2020 Andrew Zeller
+              </p>
+            </div>
+          </Social>
+          
+        </FooterGrid>
+
+      </FooterBody>
     </FooterContainerFullWidth>
   )
 

@@ -17,15 +17,15 @@ export default () =>
             .documentId('siteSettings')
         )
         .icon(MdSettings),
-      S.listItem()
-        .title('Company Info')
-        .child(
-          S.editor()
-            .id('companyInfo')
-            .schemaType('companyInfo')
-            .documentId('companyInfo')
-        )
-        .icon(MdBusiness),
+      // S.listItem()
+      //   .title('Company Info')
+      //   .child(
+      //     S.editor()
+      //       .id('companyInfo')
+      //       .schemaType('companyInfo')
+      //       .documentId('companyInfo')
+      //   )
+      //   .icon(MdBusiness),
       S.listItem()
         .title('My Info')
         .child(
@@ -36,6 +36,41 @@ export default () =>
         )
         .icon(MdAccountCircle),
       S.listItem()
+      .title('Pages')
+      .child(
+        S.list()
+          .title('Pages')
+          .items([
+            S.listItem()
+              .title('Home')
+              .child(
+                S.editor()
+                  .id('homePage')
+                  .schemaType('page')
+                  .documentId('home')
+              )
+              .icon(FaFile),
+            S.listItem()
+            .title('About')
+            .child(
+              S.editor()
+                .id('aboutPage')
+                .schemaType('page')
+                .documentId('about')
+            )
+            .icon(FaFile),
+            S.listItem()
+              .title('Contact')
+              .child(
+                S.editor()
+                  .id('contactPage')
+                  .schemaType('page')
+                  .documentId('contact')
+              )
+              .icon(FaFile)
+          ])
+      ),
+      S.listItem()
         .title('Projects')
         .schemaType('project')
         .child(S.documentTypeList('project')),
@@ -43,41 +78,7 @@ export default () =>
         .title('Blog posts')
         .schemaType('post')
         .child(S.documentTypeList('post').title('Blog posts')),
-      S.listItem()
-        .title('Pages')
-        .child(
-          S.list()
-            .title('Pages')
-            .items([
-              S.listItem()
-                .title('Home')
-                .child(
-                  S.editor()
-                    .id('homePage')
-                    .schemaType('page')
-                    .documentId('home')
-                )
-                .icon(FaFile),
-              S.listItem()
-              .title('About')
-              .child(
-                S.editor()
-                  .id('aboutPage')
-                  .schemaType('page')
-                  .documentId('about')
-              )
-              .icon(FaFile),
-              S.listItem()
-                .title('Contact')
-                .child(
-                  S.editor()
-                    .id('contactPage')
-                    .schemaType('page')
-                    .documentId('contact')
-                )
-                .icon(FaFile)
-            ])
-        ),
+
       S.listItem()
         .title('People')
         .schemaType('person')

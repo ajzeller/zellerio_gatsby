@@ -8,15 +8,7 @@ import SEO from '../components/seo'
 import Layout from '../containers/layout'
 import { ContainerFullWidth, ContainerBodyWidth, ContainerMain } from '../containers'
 import { H1, H2, H3, H4, H5, Paragraph } from '../components'
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
-import { IoMdArrowForward } from "react-icons/io";
 import ListItem from '../components/list-item'
-import { responsiveTitle1 } from '../components/typography.module.css'
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-
-import ReactSvg from '../assets/react_icon.svg'
-import ReduxSvg from '../assets/redux_icon.svg'
-
 
 const Image = styled(Img)`
   margin: 0 auto;
@@ -26,17 +18,7 @@ const Image = styled(Img)`
   justify-self: center;
 `
 
-const SectionTitle = styled(H2)`
-  margin: 12px 0 8px 0;
-`
-
-const Description = styled.span`
-  color: ${props => props.theme.theme.text.tertiary};
-`
-
 const ToolsList = styled.ul`
-  /* list-style: none; */
-  /* padding: 0; */
 `
 
 const AboutPage = props => {
@@ -90,19 +72,6 @@ const AboutPage = props => {
           <ListItem name='Framer Motion' link='' detail='Animation library for React' link='https://www.framer.com/motion/' />
           <ListItem name='SASS' link='' detail='CSS with superpowers' link='https://sass-lang.com/' />
         </ToolsList>
-
-        <ButtonDropdown isOpen={false} toggle={() => console.log('toggle')}>
-      <DropdownToggle caret>
-        Button Dropdown
-      </DropdownToggle>
-      <DropdownMenu>
-        <DropdownItem header>Header</DropdownItem>
-        <DropdownItem disabled>Action</DropdownItem>
-        <DropdownItem>Another Action</DropdownItem>
-        <DropdownItem divider />
-        <DropdownItem>Another Action</DropdownItem>
-      </DropdownMenu>
-    </ButtonDropdown>
 
       </ContainerMain>
     </Layout>
