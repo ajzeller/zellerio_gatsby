@@ -108,8 +108,9 @@ const Social = styled.div`
     justify-self: left;
     justify-items: left;
 
-  p{
-    text-align: left;
+    p{
+      text-align: left;
+    }
   }
 `
 
@@ -125,9 +126,6 @@ const Footer = ( { logoText, projects } ) => {
     <li>
       <Link to='/uses'>Uses</Link>
     </li>
-    {/* <li>
-      <Link to='/photo'>Photography</Link>
-    </li> */}
 
   </ul>)
 
@@ -161,8 +159,8 @@ const Footer = ( { logoText, projects } ) => {
             {socialList}
             <div>
               <p>
-                Google <a href='https://policies.google.com/privacy' target="_blank">Privacy Policy </a> 
-                and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+                Google <a href='https://policies.google.com/privacy' target="_blank" rel="noopener">Privacy Policy </a> 
+                and <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Terms of Service</a> apply.
               </p>
               <p>
                 © 2020 Andrew Zeller

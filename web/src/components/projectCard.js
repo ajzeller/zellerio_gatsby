@@ -178,7 +178,7 @@ const ProjectCard = ({projectData}) => {
           <ButtonGroup>
             {
               githubUrl && (
-                <a href={githubUrl} target="_blank">
+                <a href={githubUrl} target="_blank" rel="noopener">
                   <ButtonSecondary 
                     color={color}
                     whileHover={{

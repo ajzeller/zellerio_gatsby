@@ -12,13 +12,14 @@ const Toggler = () => {
 
   return(
     <Toggle
-          checked={darkMode.value}
-          onChange={darkMode.toggle} 
-          icons={{
-            checked: <FiSun />,
-            unchecked: <FiMoon />
-          }}
-          />
+      checked={darkMode.value}
+      onChange={darkMode.toggle} 
+      icons={{
+        checked: <FiSun />,
+        unchecked: <FiMoon />
+      }}
+      aria-label='Dark mode toggle'
+    />
   )
   
 }
