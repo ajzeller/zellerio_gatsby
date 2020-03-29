@@ -41,6 +41,19 @@ module.exports = {
         cookieDomain: "https://zeller.io",
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Andrew Zeller Frontend Engineer Portfolio`,
+        short_name: `Andrew Zeller`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#2C7AF8`,
+        display: `standalone`,
+        icon: `src/assets/icon.svg`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ]
 }
 

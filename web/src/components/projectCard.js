@@ -151,7 +151,7 @@ const ProjectCard = ({projectData}) => {
   return(
     // <Link to={`/projects/${slug.current}`}>
       <Card color={color}>
-        <Link to={`/projects/${slug.current}`}>
+        <Link to={`/projects/${slug.current}`} alt={`View ${name} project page`}>
           <ImageWrapper
             whileHover={width > 700 ? {
               scale: 1.05,

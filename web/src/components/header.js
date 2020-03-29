@@ -311,16 +311,16 @@ export const NavList = ({ currentPage, isMenuVisible }) => {
 
 export const socialList = (
   <SocialIcons>
-    <a href="https://github.com/ajzeller" target="_blank" rel="noopener">
+    <a href="https://github.com/ajzeller" target="_blank" rel="noopener" alt='View Github profile'>
       <FaGithub size='24px' className='icon' />
     </a>
-    <a href="https://dribbble.com/andrewjzeller" target="_blank" rel="noopener">
+    <a href="https://dribbble.com/andrewjzeller" target="_blank" rel="noopener" alt='View Dribbble profile'>
       <FaDribbble size='24px' className='icon' />
     </a>
-    <a href="https://www.linkedin.com/in/andrewjzeller/" target="_blank" rel="noopener">
+    <a href="https://www.linkedin.com/in/andrewjzeller/" target="_blank" rel="noopener" alt='View LinkedIn profile'>
       <FaLinkedin size='24px' className='icon' />
     </a>
-    <a href="https://twitter.com/andrewjzeller" target="_blank" rel="noopener">
+    <a href="https://twitter.com/andrewjzeller" target="_blank" rel="noopener" alt='View Twitter profile'>
       <FaTwitter size='24px' className='icon' />
     </a>
   </SocialIcons>)

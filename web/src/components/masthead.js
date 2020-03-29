@@ -131,7 +131,7 @@ const Masthead = ( {data} ) => {
                   x: 5
                 }}>
                 <Link to='/about/'>
-                  More
+                  Learn more
                   <SvgWrapper>
                     <IoMdArrowForward size='20px' />
                   </SvgWrapper>
