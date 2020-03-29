@@ -49,7 +49,7 @@ const AboutPage = props => {
         <Image fluid={profileImage.asset.fluid} />
         <BlockContent blocks={page._rawBody || []} />
         <H2>My Toolbox</H2>
-        <p>These are the tools I use to build apps and sites.</p>
+        <p>These are the tools I have experience using to build apps and sites. I'm constantly learning new tools so this list is subject to change 🤓.</p>
         <H3>Frameworks & Libraries</H3>
         <ToolsList>
           <ListItem name='React' link='' detail='Javascript UI Library' link='https://reactjs.org/' />

@@ -151,7 +151,7 @@ const ProjectCard = ({projectData}) => {
   return(
     // <Link to={`/projects/${slug.current}`}>
       <Card color={color}>
-        <Link to={`/projects/${slug.current}`} alt={`View ${name} project page`}>
+        <Link to={`/projects/${slug.current}`}>
           <ImageWrapper
             whileHover={width > 700 ? {
               scale: 1.05,
@@ -162,6 +162,7 @@ const ProjectCard = ({projectData}) => {
               fluid={imageMobile1.asset.fluid} 
               objectFit="fill"
               objectPosition="center top"
+              alt={`View ${name} project page`}
             />
           </ImageWrapper>
         </Link>
