@@ -3,10 +3,14 @@
     <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
     <title>Artboard</title>
     <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#007BE0" offset="0%"></stop>
+            <stop stop-color="#2C7AF8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
     <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <circle id="Oval" fill="#2C7AF8" cx="100" cy="100" r="100"></circle>
-        <text id="Z" font-family="Sen-Bold, Sen" font-size="154" font-weight="bold" fill="#FFFFFF">
-            <tspan x="48.0400391" y="152">Z</tspan>
-        </text>
+        <circle id="Oval" fill="url(#linearGradient-1)" cx="100" cy="100" r="100"></circle>
+        <polyline id="Path-7" stroke="#FFFFFF" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" points="60 55.2142857 140 55 60.2067183 145 139.793282 144.785714"></polyline>
     </g>
 </svg>
