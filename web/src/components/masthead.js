@@ -108,9 +108,9 @@ const Masthead = ( {data} ) => {
         >
           <Intro>I'm Andrew Zeller 👋</Intro>
 
-          <p>A self-taught <span className="bold">frontend engineer</span> living in Mountain View, California.</p>
+          <p>A mechanical engineer and self-taught frontend developer living in Mountain View, California.</p>
 
-          <p>I love designing and developing web apps that are fast, useful and elegant.</p>
+          <p>I love building useful and elegant products that solve problems.</p>
           
           {/* <Label style={{marginTop: '50px'}}>My Toolbox</Label> */}
           <ToolsIntro>My Toolbox</ToolsIntro>

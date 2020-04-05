@@ -48,7 +48,7 @@ const AboutPage = props => {
       <ContainerMain>
         <Image fluid={profileImage.asset.fluid} />
         <BlockContent blocks={page._rawBody || []} />
-        <H2>My Toolbox</H2>
+        <H2>My Developer Toolbox</H2>
         <p>These are the tools I have experience using to build apps and sites. I'm constantly learning new tools so this list is subject to change 🤓.</p>
         <H3>Frameworks & Libraries</H3>
         <ToolsList>

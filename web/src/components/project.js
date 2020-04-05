@@ -177,10 +177,13 @@ const Project = (props) => {
           {_rawBody && <BlockContent blocks={_rawBody || []} />}
 
         </ProjectContainer>
-    
-        <ImageDesktopWrapper>
-          <Image fluid={imageDesktop.asset.fluid} />
-        </ImageDesktopWrapper>
+
+        { imageDesktop && (
+          <ImageDesktopWrapper>
+            <Image fluid={imageDesktop.asset.fluid} />
+          </ImageDesktopWrapper>
+        )}
+                  
     </ContainerFullWidth>
   )
 }
