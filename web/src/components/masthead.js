@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Img from "gatsby-image"
-import { FaReact, FaDatabase } from "react-icons/fa";
+import { FaReact, FaDatabase, FaWrench } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 import { Link } from 'gatsby'
 import { IoMdArrowForward } from "react-icons/io";
@@ -115,6 +115,11 @@ const Masthead = ( {data} ) => {
           {/* <Label style={{marginTop: '50px'}}>My Toolbox</Label> */}
           <ToolsIntro>My Toolbox</ToolsIntro>
           <SkillsGrid>
+            <FaWrench size='24px' />
+              <div>
+                <p><span className="bold">Hardware</span></p>
+                <p>SolidWorks, Arena PLM, 3D-printing, CNC Machining </p>
+              </div>
             <FaReact size='24px' />
               <div>
                 <p><span className="bold">Frontend</span></p>
