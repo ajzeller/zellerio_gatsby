@@ -91,12 +91,12 @@ export default {
       type: 'array',
       of: [{ type: 'reference', to: { type: 'tool' } }]
     },
-    // {
-    //   name: 'categories',
-    //   title: 'Categories',
-    //   type: 'array',
-    //   of: [{ type: 'reference', to: { type: 'category' } }]
-    // },
+    {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }]
+    },
     {
       name: 'body',
       title: 'Body',

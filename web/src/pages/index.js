@@ -70,6 +70,9 @@ export const query = graphql`
           color
           backgroundColor
         }
+        categories {
+          title
+        }
         imageMobile1 {
           asset {
             fluid {
@@ -79,6 +82,14 @@ export const query = graphql`
               ...GatsbySanityImageFixed
             }
           }
+        }
+      }
+    }
+
+    categories: allSanityCategory {
+      edges {
+        node {
+          title
         }
       }
     }
@@ -102,6 +113,9 @@ export const query = graphql`
             name
             color
             backgroundColor
+          }
+          categories {
+            title
           }
           imageMobile1 {
             asset {

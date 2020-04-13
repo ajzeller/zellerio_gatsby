@@ -17,7 +17,7 @@ const Card = styled(motion.div)`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 48px;
-  grid-template-rows: 500px;
+  grid-template-rows: 400px;
   /* background-color: ${props => props.theme.theme.bg.secondary}; */
   background-color: ${props => props.color};
   box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
@@ -36,20 +36,21 @@ const Image = styled(Img)`
 
 const ImageWrapper = styled(motion.div)`
   width: 40vw;
-  max-width: 350px;
-  height: 500px;
+  max-width: 250px;
+  height: 400px;
   overflow: hidden;
   justify-self: right;
   box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
-  margin: 48px 0 0 48px;
-  border-top-right-radius: 24px;
-  border-top-left-radius: 24px;
+  margin: 48px 0 0px 48px;
+  border-radius: 24px;
+  /* border-top-right-radius: 24px; */
+  /* border-top-left-radius: 24px; */
   position: relative;
-  top: 100px;
+  top: 0px;
 
   @media (max-width: 700px) {
     margin: 24px auto 0 auto;
-    height: 500px;
+    /* height: 500px; */
     max-width: 500px;
     top: 0px;
     width: 80vw;
@@ -128,7 +129,7 @@ export const ButtonGroup = styled.div`
 `
 
 const ProjectCard = ({projectData}) => {
-  console.log(projectData)
+  // console.log(projectData)
   const { 
     name, 
     color,
@@ -146,7 +147,7 @@ const ProjectCard = ({projectData}) => {
     width = 1000
    }
 
-   console.log(`width: ${width}`)
+  //  console.log(`width: ${width}`)
 
   return(
     // <Link to={`/projects/${slug.current}`}>
@@ -155,7 +156,7 @@ const ProjectCard = ({projectData}) => {
           <ImageWrapper
             whileHover={width > 700 ? {
               scale: 1.05,
-              y: -100
+              y: 0
             } : { } }
           >
             <Image 

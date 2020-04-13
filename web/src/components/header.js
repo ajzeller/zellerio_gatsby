@@ -250,7 +250,7 @@ const OverflowMenu = ( {currentPage} ) => {
   return(
     <>
       <li>
-        <Link to='/uses/' className={currentPage == 'uses' && `current`}>Uses</Link>
+        <Link to='/uses/' className={currentPage == 'uses' ? `current`: undefined}>Uses</Link>
       </li>
       <li>
         <a href='https://drive.google.com/file/d/1ZL3zTvsKfD4ryFdvCjFNsYC9TfhtYrm0/view?usp=sharing' target="_blank" rel="noopener">
@@ -268,13 +268,13 @@ export const NavList = ({ currentPage, isMenuVisible }) => {
     <NavListWrapper>
       <ul>
         <li>
-          <Link to='/about/' className={currentPage == 'about' && `current`}>About</Link>
+          <Link to='/about/' className={currentPage == 'about' ? `current`: undefined}>About</Link>
         </li>
         <li>
-          <Link to='/projects/' className={currentPage == 'projects' && `current`}>Projects</Link>
+          <Link to='/projects/' className={currentPage == 'projects' ? `current` : undefined}>Projects</Link>
         </li>
         <li>
-          <Link to='/blog/' className={currentPage == 'blog' && `current`}>Blog</Link>
+          <Link to='/blog/' className={currentPage == 'blog' ? `current` : undefined}>Blog</Link>
         </li>
         {
           !isMenuVisible && (

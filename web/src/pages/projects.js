@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
 import Container from '../components/container'
@@ -9,16 +9,35 @@ import Layout from '../containers/layout'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 import { ContainerFullWidth, ContainerBodyWidth, ContainerMain } from '../containers'
 import { H1, H2, H3, H4, H5, Paragraph } from '../components'
-import ProjectCard from '../components/projectCard'
-
+import ProjectCard, { Button } from '../components/projectCard'
+import { FaEyeSlash, FaEye  } from "react-icons/fa";
+import { MdRadioButtonChecked, MdRadioButtonUnchecked } from "react-icons/md";
+import ProjectsGrid from '../components/projectsGrid'
 import { responsiveTitle1 } from '../components/typography.module.css'
 
-const ProjectGrid = styled.div`
-  display: grid;
-  grid-template-columns: auto;
-  grid-gap: 48px;
-  box-sizing: border-box;
-`
+const ProjectsPage = props => {
+  const { data, errors } = props
+
+  if (errors) {
+    return (
+      <Layout>
+        <GraphQLErrorList errors={errors} />
+      </Layout>
+    )
+  }
+
+  return (
+    <Layout currentPage='projects'>
+      <SEO title='Projects' />
+      <ContainerMain>
+        <H1>Projects</H1>
+        <ProjectsGrid data={data} />
+      </ContainerMain>
+    </Layout>
+  )
+}
+
+export default ProjectsPage
 
 export const query = graphql`
   query ProjectsPageQuery {
@@ -29,6 +48,14 @@ export const query = graphql`
           slug {
             current
           }
+        }
+      }
+    }
+
+    categories: allSanityCategory {
+      edges {
+        node {
+          title
         }
       }
     }
@@ -51,6 +78,9 @@ export const query = graphql`
           color
           backgroundColor
         }
+        categories {
+          title
+        }
         imageMobile1 {
           asset {
             fluid {
@@ -66,29 +96,3 @@ export const query = graphql`
   }
 `
 
-const ProjectsPage = props => {
-  const { data, errors } = props
-  if (errors) {
-    return (
-      <Layout>
-        <GraphQLErrorList errors={errors} />
-      </Layout>
-    )
-  }
-  const projectNodes =
-    data && data.projects && mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
-  return (
-    <Layout currentPage='projects'>
-      <SEO title='Projects' />
-      <ContainerMain>
-        <H1>Projects</H1>
-        <ProjectGrid>
-          {data.site.projects.map(project => (<ProjectCard projectData={project} key={project.slug.current} />) )}
-        </ProjectGrid>
-        {/* {projectNodes && projectNodes.length > 0 && <ProjectPreviewGrid nodes={projectNodes} />} */}
-      </ContainerMain>
-    </Layout>
-  )
-}
-
-export default ProjectsPage

@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { H1, H2, H3, H4, H5, Paragraph } from '../components'
 import { ContainerFullWidth, ContainerBodyWidth } from '../containers'
 import ProjectCard from './projectCard'
+import ProjectsGrid from './projectsGrid'
 
 const ProjectsPanelContainer = styled(motion.div)`
   /* border-radius: 20px; */
@@ -54,9 +55,9 @@ const ProjectsPanel = ({data}) => {
     >
       <BodyContainer>
         <Title>My Projects</Title>
-        <ProjectGrid>
-          {data.site.projects.map(project => (<ProjectCard projectData={project} key={project.slug.current} />) )}
-        </ProjectGrid>
+
+        <ProjectsGrid data={data} />
+
       </BodyContainer>
     </ProjectsPanelContainer>
   )

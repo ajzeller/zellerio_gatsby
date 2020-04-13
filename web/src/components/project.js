@@ -132,15 +132,18 @@ const Project = (props) => {
               </a>
             )}
 
-            <a href={`${projectUrl}`} target="_blank">
-              <ButtonPrimary 
-                color={color}
-                whileHover={{
-                  scale: 1.05,
-                  }}>
-                Live Project <IoMdArrowForward size="20px" />
-              </ButtonPrimary>
-            </a>
+            { projectUrl && (
+              <a href={`${projectUrl}`} target="_blank">
+                <ButtonPrimary 
+                  color={color}
+                  whileHover={{
+                    scale: 1.05,
+                    }}>
+                  Live Project <IoMdArrowForward size="20px" />
+                </ButtonPrimary>
+              </a>
+            )}
+
           </ProjectButtonGroup>
 
           <ImageGrid>
