@@ -252,11 +252,6 @@ const OverflowMenu = ( {currentPage} ) => {
       <li>
         <Link to='/uses/' className={currentPage == 'uses' ? `current`: undefined}>Uses</Link>
       </li>
-      <li>
-        <a href='https://drive.google.com/file/d/1ZL3zTvsKfD4ryFdvCjFNsYC9TfhtYrm0/view?usp=sharing' target="_blank" rel="noopener">
-          Resume
-        </a>
-      </li>
     </>
   )
 }
