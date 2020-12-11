@@ -320,7 +320,7 @@ export const socialList = (
     </a>
   </SocialIcons>)
 
-const Header = ({ onHideNav, onShowNav, showNav, siteTitle, currentPage }) => {
+const Header = ({ currentPage }) => {
   
   console.log(currentPage)
 
